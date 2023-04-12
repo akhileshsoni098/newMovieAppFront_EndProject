@@ -10,7 +10,7 @@ import { loadUser } from "./actions/auth";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Dashboard from "./components/layout/Dashboard";
-
+import Navbar from "./Navbar/Navbar";
 import PrivateRoute from "./components/routing/PrivateRoute";
 
 import "./App.css";
@@ -23,7 +23,7 @@ function App() {
   return (
     <Provider store={store}>
       <Fragment>
-        {/* <Navbar /> */}
+        <Navbar />
         <section>
           <Switch>
             <PrivateRoute exact path="/" component={Dashboard} />

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { getPosts } from "../../scripts/dashboard";
-import "./Dashboard.css"
+import { WatchList } from "../../scripts/dashboard";
+import "../components/layout/Dashboard.css"
 
-export default function Dashboard() {
+export default function Watchlist() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    getPosts()
+    WatchList()
       .then((response) => {
         console.log(response.data.data);
         setPosts(response.data.data);
@@ -21,6 +21,7 @@ export default function Dashboard() {
       <div className="dashboard-content">
         {posts.length > 0 &&
           posts.map((post) => {
+            console.log(post)
             const { year, imdbID, title, poster, type } = post;
 
             return (
@@ -47,3 +48,4 @@ export default function Dashboard() {
  </div>
 );
 }
+

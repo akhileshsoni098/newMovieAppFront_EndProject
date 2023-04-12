@@ -20,15 +20,17 @@ export default function auth(state = initialState, action) {
 
   switch (type) {
     case USER_LOADED:
+      console.log(payload)
       return {
         ...state,
-        isAuthenticated: true,
+        isAuthenticated: payload?.data !== null,
         loading: false,
         user: payload,
       };
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       localStorage.setItem("token", payload.token);
+      console.log(payload.token)
       return {
         ...state,
         ...payload,
@@ -39,7 +41,7 @@ export default function auth(state = initialState, action) {
     case AUTH_ERROR:
     case LOGIN_FAIL:
     case LOGOUT:
-      // localStorage.removeItem("token");
+      localStorage.removeItem("token");
       return {
         ...state,
         token: null,

@@ -13,4 +13,19 @@ export async function getPosts() {
   return res;
 }
 
-export async function getReviews() {}
+
+
+//=================================================================================================
+export async function WatchList() {
+
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      "x-auth-token": localStorage.getItem("token"),
+    },
+  };
+  const res = await axios.get(`${appConfig.API_URL}/getWatchList`, config);
+
+  return res;
+
+}

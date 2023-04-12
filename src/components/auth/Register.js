@@ -29,9 +29,11 @@ const Register = ({ register, isAuthenticated }) => {
     }
   };
 
+
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
   }
+
 
   return (
     <Fragment>
@@ -69,6 +71,7 @@ const Register = ({ register, isAuthenticated }) => {
               htmlFor="email"
             >
              Last Name
+
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -88,6 +91,7 @@ const Register = ({ register, isAuthenticated }) => {
               htmlFor="email"
             >
              Role
+
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
