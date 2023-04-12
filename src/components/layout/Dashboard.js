@@ -1,47 +1,47 @@
 import React, { useEffect, useState } from "react";
-
 import { getPosts } from "../../scripts/dashboard";
+import "./Dashboard.css"
 
 export default function Dashboard() {
   const [posts, setPosts] = useState([]);
-  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     getPosts()
       .then((response) => {
-        setPosts(response.data);
+        console.log(response.data.data);
+        setPosts(response.data.data);
       })
       .catch((err) => console.log(err));
   }, []);
 
   return (
-    <div>
-      {posts.length > 0 &&
-        posts.map((post) => {
-          const { author, text } = post;
-          return (
-            <div key={Math.random()}>
-              <div class="max-w-md rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="recipe-image.jpg" alt="Recipe Image" />
-                <div class="px-6 py-4">
-                  <div class="flex items-center mb-2">
-                    <div>
-                      <div class="font-bold text-xl">Recipe Name</div>
-                      <p class="text-gray-700 text-base">By Recipe Author</p>
-                    </div>
+    <div className="dashboard-container"> 
+      <div className="dashboard-content">
+        {posts.length > 0 &&
+          posts.map((post) => {
+            const { year, imdbID, title, poster, type } = post;
+
+            return (
+              <div key={Math.random()} className="post-card">
+                <img src={poster} alt="Movie Poster" className="post-image" />
+                <div className="post-details">
+                  <div className="post-title">{title}</div>
+                  <div className="post-year">{year}</div>
+                  <div className="post-info">
+                    <span className="post-info-label">IMDb ID:</span>{" "}
+                    {imdbID}
                   </div>
-                  <ul class="list-disc ml-5 mb-4">
-                    <li>Recipe Item 1</li>
-                    <li>Recipe Item 2</li>
-                    <li>Recipe Item 3</li>
-                  </ul>
-                  <p class="text-gray-700 text-base mt-4">Recipe Procedure:</p>
-                  <p class="text-gray-700 text-base">{text}</p>
+                  <div className="post-info">
+                    <span className="post-info-label">Type:</span> {type}
+                  </div>
+                  <div className="post-review">
+                    Great Movie You Should Watch It..
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-    </div>
-  );
+            );
+          })}
+      </div>
+ </div>
+);
 }

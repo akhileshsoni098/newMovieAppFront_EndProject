@@ -25,7 +25,7 @@ const Register = ({ register, isAuthenticated }) => {
     if (password !== password2) {
       console.log("Passwords do not match");
     } else {
-      register({fname, lname, role, email, password});
+      register({fname, lname, role, email, password}); 
     }
   };
 

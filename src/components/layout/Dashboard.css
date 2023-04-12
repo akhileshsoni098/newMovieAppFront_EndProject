@@ -1,0 +1,70 @@
+.dashboard-container {
+  /* background-image: url("https://images.unsplash.com/photo-1508138221679-e28535e93e16"); */
+ background-color: rgb(21, 199, 30);
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  padding: 50px;
+}
+
+.post-card {
+  margin: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-image {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.post-details {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40%;
+}
+
+.post-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.post-year {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.post-info {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.post-info-label {
+  font-weight: bold;
+}
+
+.post-review {
+  font-size: 16px;
+  font-weight: bold;
+}
