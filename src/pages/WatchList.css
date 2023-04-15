@@ -1,0 +1,88 @@
+.dashboard-container {
+    margin: 20px;
+    position: relative; /* Add position relative to the container */
+  }
+  
+  .watchlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .clear-button {
+    background-color: #d43f3a;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute; /* Add position absolute to the "Clear Watchlist" button */
+    top: 0; /* Position the button at the top */
+    right: 0; /* Position the button at the right side */
+  }
+  
+  .dashboard-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .post-card {
+    background-color: white;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .post-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+  
+  .post-details {
+    padding: 10px;
+  }
+  
+  .post-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .post-year {
+    margin-bottom: 5px;
+  }
+  
+  .post-info {
+    margin-bottom: 5px;
+  }
+  
+  .post-info-label {
+    font-weight: bold;
+  }
+  
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .remove-button {
+    background-color: #d43f3a;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Add margin to the top of the dashboard-content to accommodate the Clear Watchlist button */
+  .dashboard-content {
+    margin-top: 50px;
+  }
+  

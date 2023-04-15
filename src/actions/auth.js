@@ -13,7 +13,7 @@ import {
 import setAuthToken from "../utils/setAuthToken";
 
 import { appConfig } from "./../config/config";
-
+var userId;
 export const loadUser = () => async (dispatch) => {
   const token = localStorage.getItem("token");
   // console.log(token)
@@ -21,7 +21,10 @@ export const loadUser = () => async (dispatch) => {
 
   try {
     const res = await axios.get(`${appConfig.API_URL}/api/auth`);
-console.log(res.data)
+console.log(res.data.data)
+
+userId = res.data.data._id
+
     dispatch({
       type: USER_LOADED,
       payload: res.data,

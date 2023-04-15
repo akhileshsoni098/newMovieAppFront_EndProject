@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getPosts } from "../../scripts/dashboard";
+import { getPosts, addWatchList, createReview } from "../../scripts/dashboard";
 import "./Dashboard.css"
 
 export default function Dashboard() {
@@ -11,18 +11,29 @@ export default function Dashboard() {
         console.log(response.data.data);
         setPosts(response.data.data);
       })
-      
       .catch((err) => console.log(err));
-
   }, []);
 
+  const handleAddToWatchList = async (post) => {
+    try {
+      const response = await addWatchList(post._id);
+      console.log(response.data.message);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleAddReview = (post) => {
+     createReview(post._id);
+    console.log("Adding review for post", post);
+  };
+
   return (
-    <div className="dashboard-container"> 
+    <div className="dashboard-container">  
       <div className="dashboard-content">
         {posts.length > 0 &&
           posts.map((post) => {
             const { year, imdbID, title, poster, type } = post;
-
             return (
               <div key={Math.random()} className="post-card">
                 <img src={poster} alt="Movie Poster" className="post-image" />
@@ -36,14 +47,19 @@ export default function Dashboard() {
                   <div className="post-info">
                     <span className="post-info-label">Type:</span> {type}
                   </div>
-                  <div className="post-review">
-                    Great Movie You Should Watch It..
-                  </div>
+                </div>
+                <div className="btn">
+                  <button className="btn" onClick={() => handleAddToWatchList(post)}>
+                    Add To WatchList
+                  </button>
+                  <button className="btn" onClick={() => handleAddReview(post)}>
+                    Add Review
+                  </button>
                 </div>
               </div>
             );
           })}
       </div>
- </div>
-);
+    </div>
+  );
 }

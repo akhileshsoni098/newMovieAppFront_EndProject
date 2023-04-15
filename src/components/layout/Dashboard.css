@@ -1,62 +1,55 @@
 .dashboard-container {
-  /* background-image: url("https://images.unsplash.com/photo-1508138221679-e28535e93e16"); */
- background-color: rgb(21, 199, 30);
-  background-size: cover;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 .dashboard-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+  justify-items: center;
   max-width: 1200px;
-  padding: 50px;
+  width: 100%;
+  padding: 20px;
 }
 
 .post-card {
-  margin: 20px;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  overflow: hidden;
-  width: 300px;
-  height: 450px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.post-card:hover {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 }
 
 .post-image {
+  height: 350px;
   width: 100%;
-  height: 60%;
   object-fit: cover;
-}
-
-.post-details {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 40%;
+  border-radius: 10px;
 }
 
 .post-title {
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
 .post-year {
-  font-size: 14px;
-  color: #999;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  margin-bottom: 5px;
 }
 
 .post-info {
-  font-size: 14px;
+  font-size: 0.9rem;
   margin-bottom: 5px;
 }
 
@@ -64,7 +57,36 @@
   font-weight: bold;
 }
 
-.post-review {
-  font-size: 16px;
-  font-weight: bold;
+.btn {
+  margin-top: 20px;
+}
+
+.btn button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn button:hover {
+  background-color: #3e8e41;
+}
+
+.btn-review button {
+  background-color: #2196f3;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-review button:hover {
+  background-color: #0d8bf2;
 }
