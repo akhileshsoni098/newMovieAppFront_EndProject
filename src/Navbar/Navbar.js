@@ -11,8 +11,8 @@ function Navbar() {
       <div className="nav-links">
         <a href="/dashboard">Home</a>
         <a href="/UserProfile">Profile</a> 
-        <a href="#">Reviews & Rating</a>
-        <a href="#">Contact</a>
+        <a href="www.google.com">Reviews & Rating</a>
+        <a href="www.yahoo.com">Contact</a>
         <a href="/WatchList">Watchlist</a>
       </div>
     </nav>
