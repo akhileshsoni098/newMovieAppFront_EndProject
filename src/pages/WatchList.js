@@ -113,7 +113,7 @@ export default function Watchlist() {
   return (
     <div className="dashboard-container">
       <div className="watchlist-header">
-        <h2>My Watchlist</h2>
+ 
         <button className="clear-button" onClick={() => setPosts([])}>
           Clear Watchlist
         </button>

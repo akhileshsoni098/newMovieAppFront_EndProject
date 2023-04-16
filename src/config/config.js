@@ -1,5 +1,5 @@
 module.exports = {
   appConfig: {
-    API_URL: "http://localhost:3001",
+    API_URL: "https://ember-fork-teller.glitch.me",
   },
 };

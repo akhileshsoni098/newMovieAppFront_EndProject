@@ -23,7 +23,6 @@ export const loadUser = () => async (dispatch) => {
     const res = await axios.get(`${appConfig.API_URL}/api/auth`);
 console.log(res.data.data)
 
-userId = res.data.data._id
 
     dispatch({
       type: USER_LOADED,
