@@ -13,7 +13,7 @@ import {
 import setAuthToken from "../utils/setAuthToken";
 
 import { appConfig } from "./../config/config";
-var userId;
+
 export const loadUser = () => async (dispatch) => {
   const token = localStorage.getItem("token");
   // console.log(token)
